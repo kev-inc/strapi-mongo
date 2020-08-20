@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "order"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "customer": {
+      "model": "customer"
+    },
+    "products": {
+      "via": "orders",
+      "collection": "product",
+      "dominant": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "processing",
+        "completed",
+        "cancelled",
+        "refunded"
+      ]
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "additionalnotes": {
+      "type": "string"
+    }
+  }
+}

@@ -12,8 +12,42 @@
     "name": {
       "type": "string"
     },
-    "price": {
+    "regularprice": {
       "type": "decimal"
+    },
+    "saleprice": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "stockqty": {
+      "type": "integer"
+    },
+    "visible": {
+      "type": "boolean"
+    },
+    "orders": {
+      "collection": "order",
+      "via": "products"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "products"
+    },
+    "reviews": {
+      "collection": "review"
     }
   }
 }
